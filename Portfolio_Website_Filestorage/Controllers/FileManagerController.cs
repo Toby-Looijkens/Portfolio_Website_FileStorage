@@ -24,7 +24,7 @@ namespace Portfolio_Website_Filestorage.Controllers
         [HttpGet(nameof(GetAllFiles))]
         public async Task<IActionResult> GetAllFiles()
         {
-            return View();
+            return Ok("Test");
         }
 
         [HttpDelete(nameof(DeleteFile))]

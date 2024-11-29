@@ -42,5 +42,16 @@
 
             return new TransferableFile(ID, file.FileName, Path.GetExtension(file.FileName));
         }
+
+        public TransferableFile Upload(TransferableFile file)
+        {
+            string storedFileName = file.ID.ToString() + file.Extension;
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Files");
+
+            using FileStream stream = new FileStream(Path.Combine(path, storedFileName), FileMode.Create);
+            file.File.CopyTo(stream);
+
+            return file;
+        }
     }
 }

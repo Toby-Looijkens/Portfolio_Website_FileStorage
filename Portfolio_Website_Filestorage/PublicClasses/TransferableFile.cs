@@ -5,7 +5,7 @@
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Extension { get; set; }
-        public string? URL { get; set; }
+        public IFormFile File { get; set; }
         public TransferableFile(Guid ID, string name, string extension) 
         { 
             this.ID = ID;
